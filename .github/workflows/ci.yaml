@@ -10,3 +10,11 @@ jobs:
   Spec:
     uses: "puppetlabs/cat-github-actions/.github/workflows/module_ci.yml@main"
     secrets: "inherit"
+
+  Acceptance:
+    needs: Spec
+    uses: "puppetlabs/cat-github-actions/.github/workflows/module_acceptance.yml@main"
+    with:
+      # No public puppet8 agent package for Debian 13
+      flags: "--platform-exclude Debian-13"
+    secrets: "inherit"

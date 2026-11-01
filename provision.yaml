@@ -1,0 +1,17 @@
+---
+default:
+  provisioner: docker
+  images:
+  - litmusimage/ubuntu:22.04
+  - litmusimage/ubuntu:24.04
+docker_deb:
+  provisioner: docker
+  images:
+  - litmusimage/debian:12
+docker_el:
+  provisioner: docker
+  images:
+  - litmusimage/centos:stream8
+  - litmusimage/centos:stream9
+  - litmusimage/oraclelinux:8
+  - litmusimage/oraclelinux:9
